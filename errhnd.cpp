@@ -1,6 +1,8 @@
 #include "rar.hpp"
 
 
+#undef ALLOW_EXCEPTIONS
+
 static bool UserBreak;
 
 ErrorHandler::ErrorHandler()

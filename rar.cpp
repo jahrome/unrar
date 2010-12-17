@@ -1,5 +1,7 @@
 #include "rar.hpp"
 
+#undef ALLOW_EXCEPTIONS
+
 #if !defined(GUI) && !defined(RARDLL)
 int main(int argc, char *argv[])
 {

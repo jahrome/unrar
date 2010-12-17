@@ -110,25 +110,7 @@ void Alarm()
 #ifndef GUI
 void GetPasswordText(char *Str,int MaxLength)
 {
-#ifdef _WIN_32
-  HANDLE hConIn=GetStdHandle(STD_INPUT_HANDLE);
-  HANDLE hConOut=GetStdHandle(STD_OUTPUT_HANDLE);
-  DWORD ConInMode,ConOutMode;
-  DWORD Read=0;
-  GetConsoleMode(hConIn,&ConInMode);
-  GetConsoleMode(hConOut,&ConOutMode);
-  SetConsoleMode(hConIn,ENABLE_LINE_INPUT);
-  SetConsoleMode(hConOut,ENABLE_PROCESSED_OUTPUT|ENABLE_WRAP_AT_EOL_OUTPUT);
-  ReadConsole(hConIn,Str,MaxLength-1,&Read,NULL);
-  Str[Read]=0;
-  OemToChar(Str,Str);
-  SetConsoleMode(hConIn,ConInMode);
-  SetConsoleMode(hConOut,ConOutMode);
-#elif defined(_EMX) || defined(_BEOS) || defined(__sparc) || defined(sparc) || defined (__VMS)
   fgets(Str,MaxLength-1,stdin);
-#else
-  strncpyz(Str,getpass(""),MaxLength);
-#endif
   Str[MaxLength-1]=0;
   RemoveLF(Str);
 }

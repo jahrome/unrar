@@ -8,6 +8,8 @@
 #include "unpack20.cpp"
 #endif
 
+#undef ALLOW_EXCEPTIONS
+
 Unpack::Unpack(ComprDataIO *DataIO)
 {
   UnpIO=DataIO;
