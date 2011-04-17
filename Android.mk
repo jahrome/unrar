@@ -4,6 +4,8 @@ UNRAR_TOP := $(LOCAL_PATH)
 
 include $(CLEAR_VARS)
 
+LOCAL_MODULE_TAGS:=eng debug
+
 LOCAL_SRC_FILES:= \
 	rar.cpp strlist.cpp strfn.cpp pathfn.cpp savepos.cpp smallfn.cpp global.cpp file.cpp filefn.cpp filcreat.cpp \
 	archive.cpp arcread.cpp unicode.cpp system.cpp isnt.cpp crypt.cpp crc.cpp rawread.cpp encname.cpp \
